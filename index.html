@@ -3,32 +3,387 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GRM Gaming - Official Website</title>
+  <title>GRM Gaming | Official Website</title>
+  <meta name="description" content="GRM Gaming - Mobile Game Development Studio. Discover our latest games, news, and official documents.">
+  
+  <!-- Google Fonts & FontAwesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
-    :root { color-scheme: light; font-family: Arial, sans-serif; color: #172033; background: #f4f6fb; }
-    body { margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
-    main { max-width: 600px; width: 90%; margin: 20px; padding: 40px; background: #fff; border-radius: 16px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-    .logo { max-width: 120px; height: auto; border-radius: 12px; margin-bottom: 20px; }
-    h1 { color: #172b57; margin-bottom: 8px; font-size: 28px; }
-    p { color: #526078; font-size: 16px; margin-bottom: 30px; }
-    .links { display: flex; flex-direction: column; gap: 12px; }
-    .btn { display: block; padding: 12px 20px; background: #f0f4f9; color: #174ea6; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background 0.2s; }
-    .btn:hover { background: #e2e8f0; }
+    :root {
+      --bg-color: #0b0f19;
+      --card-bg: rgba(22, 31, 48, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --accent-color: #6366f1;
+      --accent-hover: #4f46e5;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --nav-bg: rgba(11, 15, 25, 0.85);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.15), transparent 400px),
+                  radial-gradient(circle at bottom left, rgba(79, 70, 229, 0.1), transparent 400px),
+                  var(--bg-color);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Navbar */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--nav-bg);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .brand img {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .brand-name {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 24px;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--text-main);
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 80px 24px 60px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      color: #818cf8;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+
+    /* Games Section */
+    .section-container {
+      max-width: 1100px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
+      flex: 1;
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title i {
+      color: var(--accent-color);
+    }
+
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .game-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 24px;
+      backdrop-filter: blur(8px);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .game-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(99, 102, 241, 0.4);
+    }
+
+    .game-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .game-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #6366f1, #4f46e5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: #fff;
+      box-shadow: 0 8px 16px rgba(99, 102, 241, 0.25);
+    }
+
+    .game-info h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .game-tag {
+      font-size: 0.8rem;
+      color: #818cf8;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .game-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    .btn-play {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--accent-color);
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s ease;
+    }
+
+    .btn-play:hover {
+      background: var(--accent-hover);
+    }
+
+    /* Footer / Legal Links */
+    footer {
+      border-top: 1px solid var(--card-border);
+      background: rgba(11, 15, 25, 0.95);
+      padding: 40px 24px;
+      margin-top: auto;
+    }
+
+    .footer-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-brand p {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 4px;
+    }
+
+    .legal-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .legal-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s ease;
+    }
+
+    .legal-links a:hover {
+      color: #fff;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2rem; }
+      .nav-container { flex-direction: column; gap: 16px; }
+      .footer-container { flex-direction: column; text-align: center; }
+    }
   </style>
 </head>
 <body>
-  <main>
-    <!-- Görsel adı tam olarak depondaki gibi güncellendi -->
-    <img src="GRM_Gaming_Logo.png" alt="GRM Gaming Logo" class="logo">
-    
-    <h1>GRM Gaming</h1>
-    <p>Official Mobile Games Developer</p>
 
-    <div class="links">
-      <a href="privacy-policy.html" class="btn">Gizlilik Politikası (Privacy Policy)</a>
-      <a href="terms.html" class="btn">Kullanım Koşulları (Terms & Conditions)</a>
-      <a href="app-ads.txt" class="btn">App-Ads.txt</a>
+  <!-- Header / Navigation Bar -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <img src="GRM_Gaming_Logo.png" alt="GRM Gaming Logo">
+        <span class="brand-name">GRM GAMING</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#games">Oyunlarımız</a></li>
+          <li><a href="#about">Hakkımızda</a></li>
+          <li><a href="mailto:reflexiumapp@gmail.com">İletişim</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="about">
+    <span class="hero-badge"><i class="fa-solid fa-gamepad"></i> Independent Game Studio</span>
+    <h1>Eğlenceli ve Hızlı Mobil Oyun Deneyimleri</h1>
+    <p>GRM Gaming olarak oyunculara yenilikçi, dinamik ve sürükleyici mobil oyunlar sunmak için çalışıyoruz.</p>
+  </section>
+
+  <!-- Main Content: Games Section -->
+  <main class="section-container" id="games">
+    <h2 class="section-title"><i class="fa-solid fa-trophy"></i> Popüler Oyunlarımız</h2>
+    
+    <div class="games-grid">
+      
+      <!-- Reflexium Card -->
+      <article class="game-card">
+        <div>
+          <div class="game-header">
+            <div class="game-icon">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+            <div class="game-info">
+              <h3>Reflexium</h3>
+              <span class="game-tag">Arcade & Reflex</span>
+            </div>
+          </div>
+          <p class="game-desc">
+            Reflekslerinizi ve hızınızı test edin! Engellerden kaçın, yüksek skorlar yapın ve liderlik tablosunda üst sıralara tırmanın.
+          </p>
+        </div>
+        <a href="https://play.google.com/store/apps/details?id=com.grmgaming.reflexium" target="_blank" class="btn-play">
+          <i class="fa-brands fa-google-play"></i> Google Play'de İncele
+        </a>
+      </article>
+
+      <!-- Gelecek Oyun / Template Card -->
+      <article class="game-card" style="opacity: 0.8;">
+        <div>
+          <div class="game-header">
+            <div class="game-icon" style="background: linear-gradient(135deg, #475569, #334155);">
+              <i class="fa-solid fa-rocket"></i>
+            </div>
+            <div class="game-info">
+              <h3>Yeni Proje</h3>
+              <span class="game-tag" style="color: #94a3b8;">Yakında</span>
+            </div>
+          </div>
+          <p class="game-desc">
+            Sizlere daha fazla eğlence sunmak adına yeni tempolu arcade projemiz üzerinde çalışmaya devam ediyoruz. Çok yakında mağazada!
+          </p>
+        </div>
+        <span class="btn-play" style="background: #334155; cursor: default;">
+          <i class="fa-solid fa-clock"></i> Geliştirme Aşamasında
+        </span>
+      </article>
+
     </div>
   </main>
+
+  <!-- Footer with Legal Document Links -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <strong style="color: #fff;">GRM Gaming</strong>
+        <p>© 2026 GRM Gaming. Tüm hakları saklıdır.</p>
+      </div>
+
+      <!-- Yasal Bağlantılar (Google & AdMob için Tam Uyumlu) -->
+      <div class="legal-links">
+        <a href="privacy-policy.html"><i class="fa-solid fa-shield-halved"></i> Gizlilik Politikası</a>
+        <a href="terms.html"><i class="fa-solid fa-file-contract"></i> Kullanım Koşulları</a>
+        <a href="app-ads.txt"><i class="fa-solid fa-rectangle-ad"></i> App-Ads.txt</a>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
