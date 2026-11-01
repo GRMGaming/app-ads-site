@@ -3,9 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GRM Gaming | Official Website</title>
-  <meta name="description" content="GRM Gaming - Mobile Game Development Studio. Discover our latest games, news, and official documents.">
+  <title>GRM Gaming | Official Mobile Game Studio</title>
+  <meta name="description" content="GRM Gaming Studio - Mobil oyun geliştirme stüdyosu. Reflexium ve yakında çıkacak yeni arcade oyunlarımızı keşfedin.">
+  <meta name="keywords" content="GRM Gaming, Reflexium, Mobile Games, Arcade Games, Flutter Games, Indie Game Studio">
+  <meta name="author" content="GRM Gaming Studio">
   
+  <!-- Canonical & Open Graph (Social Media Cards) -->
+  <link rel="canonical" href="https://grmgamingstudio.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://grmgamingstudio.com/" />
+  <meta property="og:title" content="GRM Gaming | Official Mobile Game Studio" />
+  <meta property="og:description" content="Eğlenceli, dinamik ve tempolu mobil oyun deneyimleri. Oyunlarımızı keşfedin!" />
+  <meta property="og:image" content="https://grmgamingstudio.com/GRM_Gaming_Logo.png" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="GRM Gaming | Official Mobile Game Studio" />
+  <meta name="twitter:description" content="Eğlenceli, dinamik ve tempolu mobil oyun deneyimleri. Oyunlarımızı keşfedin!" />
+  <meta name="twitter:image" content="https://grmgamingstudio.com/GRM_Gaming_Logo.png" />
+
   <!-- Google Fonts & FontAwesome Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +38,10 @@
       --text-main: #f3f4f6;
       --text-muted: #9ca3af;
       --nav-bg: rgba(11, 15, 25, 0.85);
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     * {
@@ -108,7 +128,7 @@
     /* Hero Section */
     .hero {
       text-align: center;
-      padding: 80px 24px 60px;
+      padding: 80px 24px 50px;
       max-width: 800px;
       margin: 0 auto;
     }
@@ -137,6 +157,36 @@
       font-size: 1.15rem;
       color: var(--text-muted);
       margin-bottom: 32px;
+    }
+
+    /* Studio Stats Strip */
+    .stats-container {
+      max-width: 1100px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .stat-item h4 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent-color);
+    }
+
+    .stat-item p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
     }
 
     /* Games Section */
@@ -242,6 +292,28 @@
       background: var(--accent-hover);
     }
 
+    /* Contact Section */
+    .contact-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 32px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .contact-card h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .contact-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
     /* Footer / Legal Links */
     footer {
       border-top: 1px solid var(--card-border);
@@ -304,7 +376,7 @@
         <ul>
           <li><a href="#games">Oyunlarımız</a></li>
           <li><a href="#about">Hakkımızda</a></li>
-          <li><a href="mailto:reflexiumapp@gmail.com">İletişim</a></li>
+          <li><a href="#contact">İletişim</a></li>
         </ul>
       </nav>
     </div>
@@ -316,6 +388,24 @@
     <h1>Eğlenceli ve Hızlı Mobil Oyun Deneyimleri</h1>
     <p>GRM Gaming olarak oyunculara yenilikçi, dinamik ve sürükleyici mobil oyunlar sunmak için çalışıyoruz.</p>
   </section>
+
+  <!-- Studio Stats Strip -->
+  <div class="stats-container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <h4>1+</h4>
+        <p>Yayınlanan Oyun</p>
+      </div>
+      <div class="stat-item">
+        <h4>Android</h4>
+        <p>Platform Desteği</p>
+      </div>
+      <div class="stat-item">
+        <h4>%100</h4>
+        <p>Bağımsız & Yerli</p>
+      </div>
+    </div>
+  </div>
 
   <!-- Main Content: Games Section -->
   <main class="section-container" id="games">
@@ -345,7 +435,7 @@
       </article>
 
       <!-- Gelecek Oyun / Template Card -->
-      <article class="game-card" style="opacity: 0.8;">
+      <article class="game-card" style="opacity: 0.85;">
         <div>
           <div class="game-header">
             <div class="game-icon" style="background: linear-gradient(135deg, #475569, #334155);">
@@ -366,17 +456,26 @@
       </article>
 
     </div>
+
+    <!-- Contact Section -->
+    <section class="contact-card" id="contact">
+      <h3><i class="fa-regular fa-envelope" style="color: var(--accent-color);"></i> Bize Ulaşın</h3>
+      <p>Görüşleriniz, destek talepleriniz veya iş birliği fırsatları için ekibimizle iletişime geçebilirsiniz.</p>
+      <a href="mailto:reflexiumapp@gmail.com" class="btn-play" style="display: inline-flex;">
+        <i class="fa-solid fa-paper-plane"></i> reflexiumapp@gmail.com
+      </a>
+    </section>
   </main>
 
   <!-- Footer with Legal Document Links -->
   <footer>
     <div class="footer-container">
       <div class="footer-brand">
-        <strong style="color: #fff;">GRM Gaming</strong>
+        <strong style="color: #fff;">GRM Gaming Studio</strong>
         <p>© 2026 GRM Gaming. Tüm hakları saklıdır.</p>
       </div>
 
-      <!-- Yasal Bağlantılar (Google & AdMob için Tam Uyumlu) -->
+      <!-- Yasal Bağlantılar -->
       <div class="legal-links">
         <a href="privacy-policy.html"><i class="fa-solid fa-shield-halved"></i> Gizlilik Politikası</a>
         <a href="terms.html"><i class="fa-solid fa-file-contract"></i> Kullanım Koşulları</a>
