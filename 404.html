@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Sayfa Bulunamadı | GRM Gaming</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg-color: #0b0f19;
+      --card-bg: rgba(22, 31, 48, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --accent-color: #6366f1;
+      --accent-hover: #4f46e5;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: radial-gradient(circle at center, rgba(99, 102, 241, 0.15), transparent 500px), var(--bg-color);
+    }
+    .error-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 48px 32px;
+      text-align: center;
+      max-width: 500px;
+      width: 100%;
+      backdrop-filter: blur(12px);
+    }
+    .error-icon {
+      font-size: 4rem;
+      color: var(--accent-color);
+      margin-bottom: 16px;
+    }
+    .error-code {
+      font-size: 3.5rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    p { color: var(--text-muted); margin-bottom: 32px; font-size: 1.05rem; }
+    .btn-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent-color);
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .btn-home:hover { background: var(--accent-hover); }
+  </style>
+</head>
+<body>
+  <div class="error-card">
+    <div class="error-icon"><i class="fa-solid fa-gamepad"></i></div>
+    <h1 class="error-code">404</h1>
+    <h2>Level Bulunamadı!</h2>
+    <p>Aradığınız sayfa silinmiş, adı değiştirilmiş veya hiç var olmamış olabilir.</p>
+    <a href="https://grmgamingstudio.com/" class="btn-home">
+      <i class="fa-solid fa-house"></i> Ana Sayfaya Dön
+    </a>
+  </div>
+</body>
+</html>
