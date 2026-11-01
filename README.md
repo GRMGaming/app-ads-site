@@ -3,10 +3,10 @@
 This repository hosts the official landing page, privacy policies, terms of service, and AdMob verification files for **GRM Gaming** mobile applications.
 
 ## Live Pages
-* **Website:** [grmgaming.github.io](https://grmgaming.github.io/)
-* **Privacy Policy:** [Privacy Policy](https://grmgaming.github.io/privacy-policy.html)
-* **Terms & Conditions:** [Terms & Conditions](https://grmgaming.github.io/terms.html)
-* **App-Ads.txt:** [app-ads.txt](https://grmgaming.github.io/app-ads.txt)
+* **Website:** [grmgamingstudio.com](https://grmgamingstudio.com/)
+* **Privacy Policy:** [Privacy Policy](https://grmgamingstudio.com/privacy-policy.html)
+* **Terms & Conditions:** [Terms & Conditions](https://grmgamingstudio.com/terms.html)
+* **App-Ads.txt:** [app-ads.txt](https://grmgamingstudio.com/app-ads.txt)
 
 ## Overview
 * Developed and maintained by GRM Gaming.
